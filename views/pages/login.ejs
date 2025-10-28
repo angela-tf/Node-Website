@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <section>
+        <div class="top">
+            <a href="/principal"><img id="backIcon" src="recursos/arrow-left.svg" alt=""></a>
+        </div>
+        <div class="content">
+            <form action="processa_login" method="get" name="form_login" id="form_login">
+                <h1>Login</h1>
+                <div class="inputBox">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="username">
+                </div>
+                <div class="inputBox">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="password">
+                </div>
+                 <input type="submit" id="submitBtn" value="Login">
+            </form>
+        </div>
+    </section>
+    <img class="leafImg" src="/recursos/leaf1.svg" alt="">
+</body>
+</html>

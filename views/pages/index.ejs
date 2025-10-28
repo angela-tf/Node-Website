@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/homepage.css">
+</head>
+<body>
+    <section>
+        <nav>
+            <img id="logo" src="recursos/logo.svg" alt="">
+            <ul>
+                <li id="hello"> <h3>Bem-vindo, <%= username %></h3></li>
+                <li><a href="perfil" class="link"> Perfil</a></li>
+                <li><a href="notificacoes" class="link">Notificacoes</a></li>
+                <li><a href="atividades" class="link">Atividades</a></li>
+                <li><a href="classificacao" class="link">Classificacao</a></li>
+                <li><a href="contacto" class="link">Contacto</a></li>
+                <li><a href="/processa_logout" id="logoutLink">Logout</a></li>
+            </ul>
+        </nav>
+        
+        <div class="content">
+            
+            <div class="gridItem">
+                <h2 class="title">Notificacoes Recentes</h2>
+                <div class="notificacao">
+                    <img src="/recursos/mail (2).svg" alt="">
+                    <p>O seu pedido para Lixo na Praia foi aprov Praia foi aprovado!</p>
+                </div>
+                <div class="notificacao">
+                    <img src="/recursos/mail (2).svg" alt="">
+                    <p>O seu pedido para Lixo na Praia foi aprovado!</p>
+                </div>
+                <div class="notificacao">
+                    <img src="/recursos/mail (2).svg" alt="">
+                    <p>O seu pedido para Lixo na Praia foi aprovado!</p>
+                </div>
+                <div class="notificacao">
+                    <img src="/recursos/mail (2).svg" alt="">
+                    <p>O seu pedido para Lixo na Praia foi aprovado!</p>
+                </div>
+            </div>
+            <div class="gridItem">
+                <h2 class="title">Classificacao: Top 3 </h2>
+                <div class="users">
+                    <div class="userRanking">
+                        <img id="user1" src="/recursos/circle-user-round.svg" alt="">
+                    </div>
+                    <div class="userRanking">
+                        <img id="user2" src="/recursos/circle-user-round.svg" alt="">
+                        <p>
+                    </div>
+                    <div class="userRanking">
+                        <img id="user3" src="/recursos/circle-user-round.svg" alt="">
+                    </div>
+                </div>
+                <div class="buttonBox">
+                    <a href="/classificacao">Descubra a classificação</a> 
+                </div>
+            </div>
+            <div class="gridItem">
+                <h2 class="title">Atividades Recentes</h2>
+                <div id="box">
+                <div class="todasAtividades" id="ta1">
+                    <div class="atividades" id="acti1">
+                        <div class="imageBox">
+                            <img src="/recursos/gardening.jpg" alt="">
+                        </div>
+                        <div class="descr">
+                            <h3>Plantar Arvores na Floresta Urbana</h3>
+                            <div class="details">
+                                <p><b>Data: </b> 28 Maio 2025</p>
+                                <p><b>Local: </b> Vale das Flores</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atividades" id="acti2">
+                        <div class="imageBox">
+                            <img src="/recursos/atividade1.jpg" alt="">
+                        </div>
+                        <div class="descr">
+                            <h3>Lixo Na Praia</h3>
+                            <div class="details">
+                                <p><b>Data: </b> 12 Maio 2025</p>
+                                <p><b>Local: </b> Coimbra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="todasAtividades" id="ta2">
+                    <div class="atividades" id="acti3">
+                        <div class="imageBox">
+                            <img src="/recursos/atividade2.jpg" alt="">
+                        </div>
+                        <div class="descr">
+                            <h3>Campanha “Desliga a Luz”</h3>
+                            <div class="details">
+                                <p><b>Data: </b> 06 Janeiro 2025</p>
+                                <p><b>Local: </b> Vale das Flores</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atividades" id="acti4">
+                        <div class="imageBox">
+                            <img src="/recursos/atividade3.jpg" alt="">
+                        </div>
+                        <div class="descr">
+                            <h3>Corrida Verde</h3>
+                            <div class="details">
+                                <p><b>Data: </b> 03 Fevreiro 2025</p>
+                                <p><b>Local: </b> Mata Nacional do Buçaco</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="todasAtividades" id="ta3">
+                    <div class="atividades" id="acti5">
+                        <div class="imageBox">
+                            <img src="/recursos/atividade4.jpg" alt="">
+                        </div>
+                        <div class="descr">
+                            <h3>Dia de Arborização na Floresta da Lousã</h3>
+                            <div class="details">
+                                <p><b>Data: </b> 12 Maio 2025</p>
+                                <p><b>Local: </b> Parque Florestal de Monsanto</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atividades" id="acti6">
+                        <div class="imageBox">
+                            <img src="/recursos/gardening.jpg" alt="">
+                        </div>
+                        <div class="descr">
+                            <h3>Limpeza de Trilhos </h3>
+                            <div class="details">
+                                <p><b>Data: </b> 20 Janeiro 2025</p>
+                                <p><b>Local: </b> Covão d’Ametade</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="dots">
+                    <img class="arrow" id="arrowL" src="/recursos/arrow-left.svg" alt="">
+                    <div>
+                        <span class="dot" id="dot1"></span>
+                        <span class="dot" id="dot2"></span>
+                        <span class="dot" id="dot3"></span>
+                    </div>  
+                    <img class="arrow" id="arrowR" src="/recursos/arrow-left.svg" alt="">
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    <script>
+        let ta1=document.getElementById("ta1")
+        let ta2=document.getElementById("ta2")
+        let ta3=document.getElementById("ta3")
+        let dot1=document.getElementById("dot1")
+        let dot2=document.getElementById("dot2")
+        let dot3=document.getElementById("dot3")
+        let arrowL=document.getElementById("arrowL")
+        let arrowR=document.getElementById("arrowR")
+
+        dot1.style.opacity="1";
+
+        arrowR.addEventListener("click",function(){
+            if(ta1.style.display==="block"||ta1.style.display===""){
+            ta1.style.display="none";
+            ta2.style.display="block";
+            ta3.style.display="none";
+            dot1.style.opacity="0.5";
+            dot2.style.opacity="1";
+            }
+            else if(ta2.style.display==="block"||ta2.style.display===""){
+            ta1.style.display="none";
+            ta2.style.display="none";
+            ta3.style.display="block";
+            dot1.style.opacity="0.5";
+            dot2.style.opacity="0.5";
+            dot3.style.opacity="1";
+            }
+            else if(ta3.style.display==="block"||ta3.style.display===""){
+            ta1.style.display="block";
+            ta2.style.display="none";
+            ta3.style.display="none";
+            dot1.style.opacity="1";
+            dot2.style.opacity="0.5";
+            dot3.style.opacity="0.5";
+            }
+        })
+
+        arrowL.addEventListener("click",function(){
+            if(ta1.style.display==="block"||ta1.style.display===""){
+            ta1.style.display="none";
+            ta2.style.display="none";
+            ta3.style.display="block";
+            dot1.style.opacity="0.5";
+            dot2.style.opacity="0.5";
+            dot3.style.opacity="1";
+            }
+            else if(ta3.style.display==="block"||ta3.style.display===""){
+            ta1.style.display="none";
+            ta2.style.display="block";
+            ta3.style.display="none";
+            dot1.style.opacity="0.5";
+            dot2.style.opacity="1";
+            dot3.style.opacity="0.5";
+            }
+            else if(ta2.style.display==="block"||ta2.style.display===""){
+            ta1.style.display="block";
+            ta2.style.display="none";
+            ta3.style.display="none";
+            dot1.style.opacity="1";
+            dot2.style.opacity="0.5";
+            dot3.style.opacity="0.5";
+            }
+            
+
+        })
+
+
+    </script>
+</body>
+</html>

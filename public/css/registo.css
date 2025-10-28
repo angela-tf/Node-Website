@@ -1,0 +1,156 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    background-color: #004423;
+}
+
+.leafImg{
+    position: absolute;
+    top: 0;
+    width: 25vw;
+    right: 1vw;
+}
+
+.top img{
+    width: 50px;
+    margin: 3vh 5vh;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    height: 80vh;
+    margin: 10px auto;
+}
+
+form{
+    margin: 0 5vh;
+    width: 60%;
+    height: 75vh;
+    padding: 2vw;
+    color: white;
+    border-radius: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    font-size: 3.5rem;
+    margin-bottom: 5vh;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+}
+
+#containerA{
+    height: 60vh;
+}
+
+label{
+    font-size: 1.5rem;
+}
+
+.inputBox{
+    margin-bottom: 2vh;
+}
+
+input{
+    width: 60%;
+    float: right;
+    border-radius: 12px;
+    border: 0;
+    padding: 0.7vw;
+}
+
+#buttonBox{
+    width: 80vw;
+    height: 4vh;
+    margin-top: 10vh;
+}
+
+#buttonBoxC{
+    width: 49vw;
+    height: 4vh;
+    padding: 0 3vw;
+    /* margin-bottom: 3vh; */
+    margin-top: 20vh;
+}
+
+.buttons{
+    float: right;
+    width: 10vw;
+    /* height: 5.5vh;s */
+    margin-right: 1vw;
+    border-radius: 25px;
+    border: 4px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+}
+
+
+.criarAti{
+    padding: 0.5vw 1vw;
+    width: 60%;
+    float: right;
+    border-radius: 12px;
+    border: 0;
+    background-color: #7ed957;
+}
+
+.textareaC{
+    height: 15vh;
+}
+
+.imagemPr{
+    width: 25vw;
+    height: 43vh;
+    object-fit: cover;
+    border-radius: 20px;
+    margin-top: 7vh;
+}
+
+#formA{
+    padding: 1vw 3vw;
+    margin-top: 7vh;
+    height: 50vh;
+}
+
+.activityDetails{
+    color: white;
+    padding: 4vw;
+    height: 28vh;
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+}
+
+.activityDetails p{
+    margin-bottom: 1.5vh;
+}
+
+#apagaBtn{
+    color: white;
+    float: right;
+    padding:  0.8vw 3vw;
+}
+
+#apagaAtiBtn{
+    color: white;
+    float: right;
+    padding:  0.8vw 3vw;
+}

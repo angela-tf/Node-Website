@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/principal.css">
+</head>
+<body>
+    <section>
+        <div class="top">
+            <img id="logo" src="/recursos/logo.svg" alt="">
+        </div>
+        <div class="content">
+            <div id="esquerdaBox">
+                <h1>Junte-se a nós e faça a diferença!</h1>
+                <div class="buttonBox">
+                    <button id="buttonL">LOGIN</button>
+                    <button id="buttonR">REGISTAR</button>
+                </div>
+            </div>
+            <div class="direitaBox">
+                <img class="mainImage" src="/recursos/gardening.jpg" alt="">
+            </div>
+        </div>
+    </section>
+</body>
+<script>
+    document.getElementById("buttonL").addEventListener("click",function(){
+        window.location.href="login"
+    })
+    document.getElementById("buttonR").addEventListener("click",function(){
+        window.location.href="registo"
+    })
+</script>
+</html>

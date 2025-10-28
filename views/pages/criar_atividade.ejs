@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/registo.css">
+</head>
+<body>
+    <section>
+        <div class="top">
+            <a href="atividades"><img id="backIcon" src="/recursos/arrow-left.svg" alt=""></a>
+        </div>
+        <div class="content">
+            <form action="processa_criar_atividade" method="POST" enctype="multipart/form-data" name="form_criar_atividade" id="form_criar_atividade">
+                <h1>Criar Atividade</h1>
+                <div class="inputBox ">
+                    <label for="titulo">Titulo</label>
+                    <input class="criarAti" type="text" name="titulo" id="titulo">
+                </div>
+                <div class="inputBox">
+                    <label for="data">Data</label>
+                    <input class="criarAti" type="date" name="data" id="data">
+                </div>
+                <div class="inputBox">
+                    <label for="hora">Hora</label>
+                    <input class="criarAti" type="time" name="hora" id="hora">
+                </div>
+                <div class="inputBox">
+                    <label for="imagem">Imagem</label>
+                    <input class="criarAti" type="file" name="imagem" id="imagem">
+                </div>
+                <div class="inputBox">
+                    <label for="localidade">Localidade</label>
+                    <input class="criarAti" type="text" name="localidade" id="localidade">
+                </div>
+                <div class="inputBox">
+                    <label for="participantes">Participantes</label>
+                    <input class="criarAti" type="text" name="participantes" id="participantes" readonly placeholder="Leave empty" >
+                </div>
+                <div class="inputBox descr">
+                    <label for="descricao">Descricao</label>
+                    <textarea class="criarAti textareaC" name="descricao" id="descricao"></textarea>
+                </div>
+                <div id="buttonBoxC">
+                    <div class="inputBox">
+                        <input type="submit" name="publicarBtn" id="publicarBtn" value="Publicar" class="buttons">
+                    </div>
+                </div>
+                
+            </form>
+            <!-- <div id="buttonBoxC"> -->
+                <!-- <button id="publicarBtn" class="buttons">Publicar</button> -->
+                <!-- <input type="submit" name="publicarBtn" id="publicarBtn" value="Publicar" class="buttons"> -->
+
+            <!-- </div> -->
+        </div>
+    </section>
+    <img class="leafImg" src="/recursos/leaf2.svg" alt="">
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo</title>
+    <link rel="stylesheet" href="css/registo.css">
+</head>
+<body>
+    <section>
+        <div class="top">
+            <a href="/principal"><img id="backIcon" src="recursos/arrow-left.svg" alt=""></a>
+        </div>
+        <div class="content">
+            <form action="processa_registo" method="get" name="form_registo" id="form_registo">
+                <h1>Registar</h1>
+                <div class="inputBox">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="nome">
+                </div>
+                <div class="inputBox">
+                    <label for="apelido">Apelido</label>
+                    <input type="text" name="apelido" id="apelido" placeholder="apelido">
+                </div>
+                <div class="inputBox">
+                    <label for="morada">Morada</label>
+                    <input type="text" name="morada" id="morada" placeholder="morada">
+                </div>
+                <div class="inputBox">
+                    <label for="data">Data de nascimento</label>
+                    <input type="date" name="data" id="data">
+                </div>
+                <div class="inputBox">
+                    <label for="numero">Numero de telemovel</label>
+                    <input type="tel" name="numero" id="numero" placeholder="n° telemovel">
+                </div>
+                <div class="inputBox">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="endereco e-mail">
+                </div>
+                <div class="inputBox">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="username">
+                </div>
+                <div class="inputBox">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" placeholder="password">
+                </div>
+                <div class="inputBox">
+                    <label for="password2">Confirmar Password</label>
+                    <input type="password" name="password2" id="password2" placeholder="confirmar password">
+                </div>
+
+                <div id="buttonBox">
+                    <div class="inputBox">
+                        <input type="reset" name="reset" id="reset" class="buttons">
+                    </div>
+                    <div class="inputBox">
+                        <input type="submit" name="submitButton" id="submitButton" value="Submit" class="buttons">
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+    <script>
+        let submitButton = document.getElementById("submitButton");
+        let form = document.getElementById("form_registo")
+      
+        submitButton.addEventListener("click",function(e){
+            e.preventDefault();
+            let password = document.getElementById("password").value;
+            let password2 = document.getElementById("password2").value;
+            console.log(password)
+            console.log(password2)
+            if(password!==password2){
+                alert("As palavras-passe não coincidem.");
+            }else{
+                form.submit(); 
+            }
+        })
+        
+    </script>
+</body>
+</html>

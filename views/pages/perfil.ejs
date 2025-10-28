@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/registo.css">
+</head>
+<body>
+    <section>
+        <div class="top">
+            <a href="index"><img id="backIcon" src="/recursos/arrow-left.svg" alt=""></a>
+        </div>
+        <div class="content">
+            
+            <form action="altera_registo" name="form_perfil" id="form_perfil" method="get">
+                <h1>Perfil</h1>
+                <div class="inputBox">
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" value="<%= nome %>">
+                    <input type="hidden" name="username" value="<%= username %>">
+                </div>
+                <div class="inputBox">
+                    <label for="apelido">Apelido</label>
+                    <input type="text" name="apelido" id="apelido" value="<%= apelido %>">
+                </div>
+                <div class="inputBox">
+                    <label for="morada">Morada</label>
+                    <input type="text" name="morada" id="morada" value="<%= morada %>">
+                </div>
+                <div class="inputBox">
+                    <label for="data">Data de nascimento</label>
+                    <input type="date" name="data" id="data" value="<%= data %>">
+                </div>
+                <div class="inputBox">
+                    <label for="numero">Numero de telemovel</label>
+                    <input type="tel" name="numero" id="numero" value="<%= numero %>">
+                </div>
+                <div class="inputBox">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" value="<%= email %>">
+                </div>
+                <div class="inputBox">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" value="<%= password %>">
+                </div>
+                <div id="buttonBox">
+                    <div class="inputBox">
+                        <input type="submit" name="guardar" id="guardar" class="buttons" value="Guardar">
+                    </div>
+                    <div class="inputBox">
+                        <a id="apagaBtn" href="/apaga_registo">Apaga Registo</a>          
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <img class="leafImg" src="/recursos/leaf2.svg" alt="">
+<script>
+    let apagar = document.getElementById("apagarBtn")
+    apagar.href="/apaga_registo"
+</script>
+</body>
+
+</html>

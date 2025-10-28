@@ -1,0 +1,79 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+section{
+    width: 100vw;
+    height: 100vh;
+    background-color: #004423;
+    padding: 5vh;
+}
+
+#logo{
+    width: 10vw;
+}
+
+.content{
+    display: flex;
+    flex-direction: row;
+}
+
+#esquerdaBox{
+    width: 65vw;
+    height: 60vh;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.direitaBox{
+    width: 58vw;
+    height: 65vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle,#a6ff00 25%, rgba(0, 68, 35, 1) 60%);
+    /* background: radial-gradient(#75bc0c,  #004423);; */
+}
+
+#esquerdaBox h1{
+    font-size: 5rem;
+    width: 80%;
+    text-align: center;
+}
+
+.buttonBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 5vh 0;
+}
+
+button{
+    background-color: #75bc0c;
+    width: 200px;
+    height: 6vh;
+    border: 0;
+    border-radius: 30px;
+    margin: 1vh;
+    cursor: pointer;
+    color:#004423;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.mainImage{
+    width:440px;
+    height: 440px;
+    object-fit: cover;
+    border-radius: 30px;
+}

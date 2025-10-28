@@ -1,0 +1,207 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+section{
+    /* width: 100vw; */
+    min-height: 100vh;
+    background-color: #004423;
+    overflow-x: hidden;
+}
+
+.leafImg{
+    position:absolute;
+    top: 0;
+    width: 25vw;
+    right: 1vw;
+}
+
+.top img{
+    width: 50px;
+    margin: 3vh 5vh;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    margin: 10px auto;
+    width: 85vw;
+    min-height: 80vh;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+
+h1{
+    font-size: 3.5rem;
+    margin-bottom: 5vh;
+    color: white;
+}
+
+
+.atividades{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-bottom: 3vh;
+    width: 38vw;
+    margin-right: 3vw;
+}
+
+.minhas{
+    background-color: #012413;
+    padding: 1vw;
+    border-radius: 30px;
+    /* margin: 1vw; */
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    margin-bottom: 3vh;
+    width: 35vw;
+    margin-right: 3vw;
+}
+
+h3{
+    color: greenyellow;
+    font-size: 1.5rem;
+    margin-bottom: 2vh;
+}
+p{
+    color: white;
+}
+
+
+.descr{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 18vw;
+}
+
+.imageBox{
+    width: 10vw;
+    height: 200px;
+    margin-right: 1vw;
+}
+
+.imageAti{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.details{
+    width: 20vw;}
+
+.todasAtividades{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.minhasAti{
+    margin-bottom: 10vh;
+}
+
+.para{
+    margin-bottom: 1vh;
+    width: 20vw;
+}
+
+.abrirButtons{
+    padding: 0.4vw 1.5vw;
+    width: 8vw;
+    text-align: center;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    /* margin-top: 15vh; */
+    /* height: 8vh; */
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    padding: 1vw;
+}
+
+#buttonBox{
+    width: 85vw;
+    height: 3vh;
+    /* margin-top: 10vh; */
+    margin-bottom: 10vh;
+    z-index: 2;
+}
+
+.buttons{
+    float: left;
+    width: 12vw;
+    height: 5.5vh;
+    margin-right: 1vw;
+    border-radius: 25px;
+    border: 4px solid white;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #004423;
+ 
+}
+
+.buttons img{
+    margin-right: 0.5vw;
+}
+
+#buttonBoxC{
+    width: 95vw;
+    height: 4vh;
+    padding: 0 3vw;
+    margin-bottom: 3vh;
+}
+
+.titleM{
+    margin-top: 8vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.titleM h1{
+    margin-bottom: 2vh;
+    text-align: center
+}
+
+.contentM{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mensagem{
+    font-size: 1.4em;
+}
+
+#linkM{
+    border: 3px solid white;
+    width: 8vw;
+    text-align: center;
+    border-radius: 30px;
+    padding: 0.8vw 1vw;
+    margin-top: 5vh;}
+
+.atividadeLi{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 82vw;
+}

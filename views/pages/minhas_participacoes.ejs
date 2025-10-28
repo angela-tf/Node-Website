@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/atividades.css">
+</head>
+<body>
+    <section>
+        <div class="top">
+            <a href="atividades"><img id="backIcon" src="/recursos/arrow-left.svg" alt=""></a>
+        </div>
+        <div class="content">
+            <h1>Minhas Participacoes</h1>
+            <div id="activity-list" class="atividadeLi"></div>
+        </div>
+    </section>
+    <img class="leafImg" src="/recursos/leaf2.svg" alt=""> 
+    
+    <script>
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function () {
+        if (this.status === 200) {
+          const activities = JSON.parse(this.responseText);
+          const list = document.getElementById('activity-list');
+          list.innerHTML = '';
+    
+        activities.forEach(activity => {
+            let todasAtividades = document.createElement('a')
+            todasAtividades.classList.add('atividades', 'minhas');
+    
+            let imageBox = document.createElement('div')
+            imageBox.className="imageBox";
+            let image = document.createElement('img')
+            image.className="imageAti"
+            imageBox.appendChild(image)
+            image.src=`uploads/` + `${activity.imagem}`
+    
+            let descr = document.createElement('div')
+            descr.className='descr';
+    
+            let h3 = document.createElement('h3')
+            h3.textContent=`${activity.titulo}`;
+    
+            let details = document.createElement('div')
+            details.className='details';
+    
+            let data = document.createElement('p');
+            data.innerHTML=`<b>Data</b>: ${activity.data}`;
+            data.className="para"
+    
+            let local = document.createElement('p');
+            local.innerHTML=`<b>Localidade</b>: ${activity.localidade}`;
+            local.className="para"
+    
+            let desassociarBtn = document.createElement('a');
+            desassociarBtn.textContent="Desassociar";
+            desassociarBtn.className="abrirButtons";
+
+            desassociarBtn.addEventListener('click', function () {
+              if(confirm("Tem certeza de que deseja sair da lista de participantes? Essa ação é irreversível.")){      
+                let xhttp2 = new XMLHttpRequest();
+                xhttp2.onload = function () {
+                  if (xhttp2.status === 200) {
+                    try {
+                      let response = JSON.parse(xhttp2.responseText);
+                      if (response.success) {
+                        todasAtividades.remove();
+                        console.log("error");
+                      } else {
+                        console.log("error");
+                      }
+                    } catch (erro) {
+                      console.log("error");
+                    }
+                  } else {
+                    console.log("error");
+                  }
+                };
+                xhttp2.open('GET', `/desassociar?titulo=${activity.titulo}`);
+                xhttp2.send();
+              }
+            })
+
+            list.appendChild(todasAtividades)
+            todasAtividades.appendChild(imageBox)
+            todasAtividades.appendChild(descr);
+            descr.appendChild(h3)
+            descr.appendChild(details)
+            details.appendChild(data)
+            details.appendChild(local)
+            descr.appendChild(desassociarBtn)
+        })
+        }
+      };
+    
+      xhttp.open('GET', '/minhas_participacoes/data');
+      xhttp.send();
+</script>
+</body>
+
+</html> 

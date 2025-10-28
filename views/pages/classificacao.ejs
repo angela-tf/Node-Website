@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/classificacao.css">
+</head>
+<body>
+    <section>
+      
+        <div class="top">
+            <a href="index"><img id="backIcon" src="/recursos/arrow-left.svg" alt=""></a>
+        </div>
+        <div class="content">
+            <h1>Classificacao</h1>
+            <table>
+                <tr>
+                  <th>Classificacao</th>
+                  <th>Utilizador</th>
+                  <th>Envios</th>
+                  <th>Participacoes</th>
+                  <th>Total</th>
+                </tr>
+                <% for (let i = 0; i < classificacao.length; i++) { %>
+                  <tr>
+                    <td><%= classificacao[i].rank %></td>
+                    <td><%= classificacao[i].username %></td>
+                    <td><%= classificacao[i].enviosUtilizador %></td>
+                    <td><%= classificacao[i].participacoesUtilizador %></td>
+                    <td><%= classificacao[i].total %></td>
+                  </tr>
+                <% } %>
+              </table>
+        </div>
+    </section>
+    <img class="leafImg" src="/recursos/leaf2.svg" alt="">
+    <script>
+        
+    </script>
+</body>
+
+</html>
