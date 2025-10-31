@@ -1007,17 +1007,26 @@ servidor.post('/email_process',async (req,res)=>{
         console.log('Form was successfully validated ');
         
 
-        //Nodemailer
+        //Nodemailer - worked for localhost, but doesnt work with render.com
+        // const transporter = nodemailer.createTransport({
+        //     service: 'gmail',
+        //     auth: {
+        //         type: "OAuth2",
+        //         user: process.env.EMAIL_USER,
+        //         clientId: process.env.CLIENT_ID,
+        //         clientSecret: process.env.CLIENT_SECRET,
+        //         refreshToken: process.env.REFRESH_TOKEN
+        //     },
+        // })
+
         const transporter = nodemailer.createTransport({
-            service: 'gmail',
+            host: 'smtp-relay.brevo.com',
+            port: 587,
             auth: {
-                type: "OAuth2",
-                user: process.env.EMAIL_USER,
-                clientId: process.env.CLIENT_ID,
-                clientSecret: process.env.CLIENT_SECRET,
-                refreshToken: process.env.REFRESH_TOKEN
-            },
-        })
+                user: process.env.BREVO_USER, 
+                pass: process.env.BREVO_KEY
+            }
+        });
 
         await transporter.sendMail({
             from:`"Event Team" <${process.env.EMAIL_USER}>`,
