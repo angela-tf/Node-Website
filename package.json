@@ -8,15 +8,27 @@
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "express-fileupload": "^1.5.1",
     "express-session": "^1.18.1",
+    "googleapis": "^164.1.0",
+    "nodemailer": "^7.0.10",
     "sha1": "^1.1.1"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angela-tf/Node-Website.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/angela-tf/Node-Website/issues"
+  },
+  "homepage": "https://github.com/angela-tf/Node-Website#readme",
+  "description": ""
 }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registo</title>
+    <link rel="stylesheet" href="css/registo.css">
+</head>
+<body>
+    <section>
+        <div class="top">
+            <a href="/principal"><img id="backIcon" src="recursos/arrow-left.svg" alt=""></a>
+        </div>
+        <div class="content">
+            <form action="/email_process" method="post" name="email_process" id="email_process">
+                <h1>Email</h1>
+                <div class="inputBox">
+                    <label for="nome">Name</label>
+                    <input type="text" name="nome" id="nome" placeholder="nome">
+                </div>
+               
+                <div class="inputBox">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="endereco e-mail">
+                </div>
+
+                <div class="inputBox">
+                    <label for="ticket">Number of Tickets:</label>
+                    <input type="number" name="numberOfTickets" id="numberOfTickets">
+                </div>
+                
+                <div id="buttonBox">
+                    <div class="inputBox">
+                        <input type="submit" name="submitButton" id="submitButton" value="Submit" class="buttons">
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+    <script>
+        // let submitButton = document.getElementById("submitButton");
+        // let form = document.getElementById("form_registo")
+      
+        // submitButton.addEventListener("click",function(e){
+        //     e.preventDefault();
+        //     let password = document.getElementById("password").value;
+        //     let password2 = document.getElementById("password2").value;
+        //     console.log(password)
+        //     console.log(password2)
+        //     if(password!==password2){
+        //         alert("As palavras-passe não coincidem.");
+        //     }else{
+        //         form.submit(); 
+        //     }
+        // })
+        
+    </script>
+</body>
+</html>

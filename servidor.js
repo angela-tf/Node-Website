@@ -6,6 +6,24 @@ const fs = require('fs');
 const sha1 = require('sha1');
 const session = require('express-session');
 const fileUpload = require('express-fileupload');
+servidor.use(express.json());
+
+// Imports for oauth2
+const dotenv = require("dotenv");
+dotenv.config();
+require('dotenv').config();
+// const { google } = require('googleapis');
+
+//Import to be able to send ewmails 
+const nodemailer = require("nodemailer");
+
+// // credentials used to send emails with gmail
+// const CLIENT_ID = process.env.CLIENT_ID;
+// const CLIENT_SECRET = process.env.CLIENT_SECRET;
+
+
+// const { google } = require('googleapis');
+
 
 
 servidor.use(session({
@@ -57,6 +75,10 @@ servidor.get('/contacto', function (req, res) {
     res.render('pages/contacto.ejs', { username: req.session.username });
 });
 
+servidor.get('/email', function (req, res) {
+    res.render('pages/email.ejs', { username: req.session.username });
+});
+
 servidor.get('/abre_atividade', function (req, res) {
     res.render('pages/abre_atividade.ejs', { username: req.session.username });
 });
@@ -75,10 +97,7 @@ servidor.set('views','./views')
 servidor.set('view engine', 'ejs');
 
 
-//listen to port 3000
-servidor.listen(porto, function () {
-    console.log('servidor a ser executado em http://localhost:' + porto);
-});
+
 
 //registo
 servidor.get('/processa_registo',function(req,res){
@@ -974,3 +993,75 @@ servidor.get('/mensagem_sucesso', function(req, res) {
         buttonLink:`/minhas_atividades`
     });
   });
+
+
+//Sending email to confirm getting tickets
+
+servidor.post('/email_process',async (req,res)=>{
+    
+    let nome = req.body.nome;
+    let email = req.body.email;
+    let numberOfTickets = req.body.numberOfTickets;
+
+    try {
+        console.log('Form was successfully validated ');
+        
+
+        //Nodemailer
+        const transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+                type: "OAuth2",
+                user: process.env.EMAIL_USER,
+                clientId: process.env.CLIENT_ID,
+                clientSecret: process.env.CLIENT_SECRET,
+                refreshToken: process.env.REFRESH_TOKEN
+            },
+        })
+
+        await transporter.sendMail({
+            from:`"Event Team" <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: "Reservation Confirmation",
+            html: `
+                <h2>Hello ${nome},</h2>
+                <p>Thank you for your reservation!</p>
+                <p><strong>Tickets reserved:</strong> ${numberOfTickets}</p>
+                <p>See you soon!</p>`
+        });
+
+        console.log("Sending email to: ", email);
+
+        
+        res.render('pages/mensagem', {
+            titulo: 'Tickets were sent.', 
+            texto: 'Look at your inbox for the tickets.',
+            buttonTitle:'Homepage',
+            buttonLink:`/principal`
+        });
+
+
+    } catch (error) {
+
+
+        console.error('=== EMAIL ERROR ===');
+        console.error('Error message:', error.message);
+        console.error('Error code:', error.code);
+        console.error('Full error:', error);
+        console.error('===================');
+        
+        
+        console.error('Error in submitting the form');
+        res.render('pages/mensagem', {
+            titulo: 'Error in getting tickets', 
+            texto: 'Please try again later',
+            buttonTitle:'Homepage',
+            buttonLink:`/principal`
+        });
+    }
+})
+
+//listen to port 3000
+servidor.listen(porto, function () {
+    console.log('servidor a ser executado em http://localhost:' + porto);
+});
