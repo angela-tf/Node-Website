@@ -1004,6 +1004,9 @@ servidor.post('/email_process',async (req,res)=>{
     let email = req.body.email;
     let numberOfTickets = req.body.numberOfTickets;
 
+    console.log('MAILGUN_API_KEY exists:', !!process.env.MAILGUN_API_KEY);
+    console.log('MAILGUN_DOMAIN exists:', !!process.env.MAILGUN_DOMAIN);
+
     try {
         console.log('Form was successfully validated ');
         
@@ -1045,6 +1048,7 @@ servidor.post('/email_process',async (req,res)=>{
             apiKey: process.env.MAILGUN_API_KEY,
             domain: process.env.MAILGUN_DOMAIN
         });
+
         
         const data = {
             from: `Event Team <${process.env.EMAIL_USER}>`,
