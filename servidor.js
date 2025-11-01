@@ -16,6 +16,7 @@ require('dotenv').config();
 
 //Import to be able to send ewmails 
 const nodemailer = require("nodemailer");
+const mailgun = require('mailgun-js');
 
 // // credentials used to send emails with gmail
 // const CLIENT_ID = process.env.CLIENT_ID;
@@ -1019,25 +1020,41 @@ servidor.post('/email_process',async (req,res)=>{
         //     },
         // })
 
-        const transporter = nodemailer.createTransport({
-            host: 'smtp-relay.brevo.com',
-            port: 587,
-            auth: {
-                user: process.env.BREVO_USER, 
-                pass: process.env.BREVO_KEY
-            }
-        });
+        //doesnt work with render.com (gets blocked)
+        // const transporter = nodemailer.createTransport({
+        //     host: 'smtp-relay.brevo.com',
+        //     port: 587,
+        //     secure: false,
+        //     auth: {
+        //         user: process.env.BREVO_USER, 
+        //         pass: process.env.BREVO_KEY
+        //     }
+        // });
+        // await transporter.sendMail({
+        //     from:`"Event Team" <${process.env.EMAIL_USER}>`,
+        //     to: email,
+        //     subject: "Reservation Confirmation",
+        //     html: `
+        //         <h2>Hello ${nome},</h2>
+        //         <p>Thank you for your reservation!</p>
+        //         <p><strong>Tickets reserved:</strong> ${numberOfTickets}</p>
+        //         <p>See you soon!</p>`
+        // });
 
-        await transporter.sendMail({
-            from:`"Event Team" <${process.env.EMAIL_USER}>`,
-            to: email,
-            subject: "Reservation Confirmation",
-            html: `
-                <h2>Hello ${nome},</h2>
-                <p>Thank you for your reservation!</p>
-                <p><strong>Tickets reserved:</strong> ${numberOfTickets}</p>
-                <p>See you soon!</p>`
+        const mg = mailgun({
+            apiKey: process.env.MAILGUN_API_KEY,
+            domain: process.env.MAILGUN_DOMAIN
         });
+        
+        const data = {
+            from: `Event Team <${process.env.EMAIL_USER}>`,
+            to: email,
+            subject: 'Reservation Confirmation',
+            html: `<h2>Hello ${nome},</h2>...`
+        };
+        
+        await mg.messages().send(data);
+
 
         console.log("Sending email to: ", email);
 
